@@ -1,29 +1,29 @@
 import React from 'react'
+import argentBankLogo from '../img/argentBankLogo.png'
+import { NavLink } from 'react-router-dom'
+import { ReactComponent as UserCircle } from "../img/user-circle.svg"
+
 import '../styles/nav.css'
-import argentBankLogo from "../img/argentBankLogo.png"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
- 
+
 const Nav = () => {
   return (
-    <div>
-      <nav className="main-nav">
-      <a className="main-nav-logo" href="./index.html">
+    <nav className="main-nav">
+      <NavLink to="/accueil" className="main-nav-logo">
         <img
           className="main-nav-logo-image"
           src={argentBankLogo}
           alt="Argent Bank Logo"
         />
-        <h1 className="sr-only">Argent Bank</h1>
-      </a>
+      </NavLink>
+
       <div>
-        <a className="main-nav-item" href="./sign-in.html">
-        <FontAwesomeIcon icon="far fa-circle-user" />
-          <i className="fa fa-user-circle"></i>
+        <UserCircle className="icon" />
+        <NavLink to="/login" className="main-nav-item">
+          {' '}
           Sign In
-        </a>
+        </NavLink>
       </div>
     </nav>
-    </div>
   )
 }
 

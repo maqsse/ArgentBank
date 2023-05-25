@@ -1,9 +1,9 @@
 import React from 'react'
-import  '../styles/footerStyle.css'
+import '../styles/footerStyle.css'
 
 const Footer = () => {
   return (
-    <div className='footer'>
+    <div className="footer">
       <p> Copyright 2020 Argent Bank </p>
     </div>
   )
