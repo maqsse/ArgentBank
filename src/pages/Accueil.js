@@ -1,61 +1,63 @@
-import React from 'react'
+// Icons 
+import iconChat from '../components/FeatureItem/iconChat.png'
+import iconMoney from '../components/FeatureItem/iconMoney.png'
+import iconSecurity from '../components/FeatureItem/iconSecurity.png'
+
+// Components
+import Banner from '../components/Banner'
+import Navigation from '../components/Navigation'
+import FeatureItem from '../components/FeatureItem/FeatureItem'
 import Footer from '../components/Footer'
-import Nav from '../components/Nav'
-import IconChat from '../img/iconChat.png'
-import IconMoney from '../img/iconMoney.png'
-import IconSecurity from '../img/iconSecurity.png'
+
+// Styles
 import '../styles/accueil.css'
 
-const Accueil = () => {
+export default function Accueil() {
+  document.title = 'Argent Bank - Home Page'
+
+  
+
+  // Feature's titles
+
+  const featureTitleChat = 'You are our #1 priority'
+  const featureTitleMoney = 'More savings means higher rates'
+  const featureTitleSecurity = 'Security you can trust'
+
+  // Feature's texts
+
+  const featureTextChat =
+    'Need to talk to a representative? You can get in touch through our 24/7 chat or through a phone call in less than 5 minutes.'
+  const featureTextMoney =
+    'The more you save with us, the higher your interest rate will be!'
+  const featureTextSecurity =
+    'We use top of the line encryption to make sure your data and money is always safe.'
+
+  /* ===== Features Content ===== */
+
   return (
-    <div>
+    <>
+      <Navigation />
       <main>
-        <Nav />
-        <div className="hero">
-          <section className="hero-content">
-            <p className="subtitle">No fees.</p>
-            <p className="subtitle">No minimum deposit.</p>
-            <p className="subtitle">High interest rates.</p>
-            <p className="text">
-              Open a savings account with Argent Bank today!
-            </p>
-          </section>
-        </div>
+        <Banner />
         <section className="features">
-          <div className="feature-item">
-            <img src={IconChat} alt="Chat Icon" className="feature-icon" />
-            <h3 className="feature-item-title">You are our #1 priority</h3>
-            <p>
-              Need to talk to a representative? You can get in touch through our
-              24/7 chat or through a phone call in less than 5 minutes.
-            </p>
-          </div>
-          <div className="feature-item">
-            <img src={IconMoney} alt="Money Icon" className="feature-icon" />
-            <h3 className="feature-item-title">
-              More savings means higher rates
-            </h3>
-            <p>
-              The more you save with us, the higher your interest rate will be!
-            </p>
-          </div>
-          <div className="feature-item">
-            <img
-              src={IconSecurity}
-              alt="Security Icon"
-              className="feature-icon"
-            />
-            <h3 className="feature-item-title">Security you can trust</h3>
-            <p>
-              We use top of the line encryption to make sure your data and money
-              is always safe.
-            </p>
-          </div>
+          <FeatureItem
+            iconUrl={iconChat}
+            title={featureTitleChat}
+            text={featureTextChat}
+          />
+          <FeatureItem
+            iconUrl={iconMoney}
+            title={featureTitleMoney}
+            text={featureTextMoney}
+          />
+          <FeatureItem
+            iconUrl={iconSecurity}
+            title={featureTitleSecurity}
+            text={featureTextSecurity}
+          />
         </section>
-              </main>
-                    <Footer />
-    </div>
+      </main>
+      <Footer />
+    </>
   )
 }
-
-export default Accueil

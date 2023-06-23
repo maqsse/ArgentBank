@@ -1,12 +1,9 @@
-import React from 'react'
-import '../styles/footerStyle.css'
+import '../styles/footer.css'
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <div className="footer">
-      <p> Copyright 2020 Argent Bank </p>
-    </div>
+    <footer className="footer">
+      <p className="footer-text">Copyright 2020 Argent Bank</p>
+    </footer>
   )
 }
-
-export default Footer
